@@ -1,0 +1,161 @@
+# HTB Journey - Git Ignore
+
+# === OS & System Files ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.windows-build-tools
+desktop.ini
+
+# === IDEs & Editors ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.atom/
+.sublime-*
+*.iml
+.netbeans/
+.project
+.settings/
+.classpath
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+
+# === Virtual Machines & Containers ===
+*.vmdk
+*.vdi
+*.vhd
+*.iso
+*.box
+.vagrant/
+vagrant/
+Vagrantfile.local
+
+# === Sensitive & Personal Data ===
+*.key
+*.pem
+*.pub
+id_rsa*
+id_ecdsa*
+id_ed25519*
+known_hosts
+.ssh/
+credentials.txt
+passwords.txt
+secrets.json
+.env
+.env.local
+.env.*.local
+config.local.js
+
+# === Hack The Box Specific ===
+# Don't commit actual credentials or flags
+flags.txt
+*.flag
+.htb/
+htb_config.json
+vpn-config/
+*.ovpn
+
+# === Tool-Specific Files ===
+# Metasploit
+.msf4/
+msfcache
+
+# Burp Suite
+burp_state_*/
+burp_project.json
+
+# Wireshark
+*.pcap
+*.pcapng
+.wireshark/
+
+# Nmap
+*.gnmap
+*.xml
+nmap-output/
+
+# === Database Files ===
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+
+# === Logs & Temp Files ===
+*.log
+*.logs
+logs/
+temp/
+tmp/
+*.tmp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+.DS_Store
+
+# === Build & Compilation ===
+*.o
+*.a
+*.lib
+*.out
+*.exe
+*.class
+*.jar
+*.pyc
+*.pyo
+
+# === Node.js ===
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+
+# === Ruby ===
+Gemfile.lock
+.bundle/
+
+# === Output & Results ===
+results/
+output/
+exploits-output/
+scans/
+captures/
+
+# === Custom Project ===
+# Add your own ignores here
