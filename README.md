@@ -7,7 +7,8 @@ Welcome to my Hack The Box learning repository! This repository documents my cyb
 ```
 htb-journey/
 ├── academy/                    # Academy modules and courses
-│   └── nmap-basics/           # Course-specific materials
+│   ├── linux/                 # Linux Fundamentals course
+│   └── penetration-testing/   # Penetration Tester Path modules
 ├── machines/                  # Machine walkthroughs and exploits
 │   ├── easy/                  # Easy difficulty machines
 │   └── medium/                # Medium difficulty machines
