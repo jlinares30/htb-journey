@@ -65,6 +65,15 @@ El aspecto de este prompt no es estático; se define mediante una variable de en
   - `\W`: Únicamente el nombre de la carpeta actual (no la ruta completa).
   - `\$`: Muestra `#` si eres root, y `$` si eres un usuario normal.
   - `\t`: Hora actual en formato de 24 horas (HH:MM:SS).
+  - `\T`: Hora actual en formato de 12 horas (HH:MM:SS).
+  - `\d`: Fecha actual 
+  - `\n`: Salto de línea
+  - `\H`: Nombre completo del host.
+  - `\j`: Numero de trabajos manejados por el shell
+  - `\s`: Nombre del shell
+  - `\v`: Version del shell
+  - `\r`: Retorno de carro
+  - `\@`: Hora actual
 
 > [!TIP]
 > En auditorías de seguridad y pentesting, es muy común encontrarse con "dumb shells" donde el prompt no se muestra o está roto. Saber cómo está estructurado te ayudará a identificar rápidamente si has logrado escalar privilegios a root (al notar el cambio de `$` a `#`).
