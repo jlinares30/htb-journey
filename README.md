@@ -1,8 +1,13 @@
 # HTB Journey - Learning Repository
 
+![Platform](https://img.shields.io/badge/Platform-Hack%20The%20Box-1f2026?style=flat-square&logo=hackthebox)
+![Language](https://img.shields.io/badge/Language-Python%2FPowerShell%2FBash-blue?style=flat-square)
+
 Welcome to my Hack The Box learning repository! This repository documents my cybersecurity journey through Hack The Box (HTB), a leading online platform for hands-on cybersecurity training.
 
-## 📚 Repository Structure
+---
+
+## [+] Repository Structure
 
 ```
 htb-journey/
@@ -17,7 +22,9 @@ htb-journey/
 └── README.md
 ```
 
-## 🎯 Purpose
+---
+
+## [+] Purpose
 
 This repository serves as a comprehensive learning resource documenting:
 
@@ -26,7 +33,9 @@ This repository serves as a comprehensive learning resource documenting:
 - **Custom Tools**: Scripts and utilities developed during the learning process
 - **Security Concepts**: References and explanations of cybersecurity principles
 
-## 📖 Learning Path
+---
+
+## [+] Learning Path
 
 I'm progressing through various topics including:
 - Network reconnaissance and scanning (Nmap)
@@ -37,21 +46,27 @@ I'm progressing through various topics including:
 - Reverse engineering
 - Forensics and incident response
 
-## 🛠️ Technologies & Tools
+---
+
+## [+] Technologies & Tools
 
 - **Penetration Testing**: Metasploit, Burp Suite, Wireshark
-- **Scripting**: Python, Bash
+- **Scripting**: Python, Bash, PowerShell
 - **Analysis Tools**: Nmap, Gobuster, SQLMap
 - **Virtualization**: VirtualBox, Proxmox
 
-## 💡 How to Use This Repository
+---
+
+## [+] How to Use This Repository
 
 1. **Explore Machines**: Navigate to the `machines/` folder organized by difficulty level
 2. **Review Concepts**: Check individual machine folders for detailed writeups
 3. **Use Tools**: Find utility scripts in the `tools/` directory
 4. **Study Academy**: Access course materials in the `academy/` folder
 
-## 📝 Notes
+---
+
+## [+] Notes Format
 
 Each machine and course typically includes:
 - Objectives and approach
@@ -60,28 +75,39 @@ Each machine and course typically includes:
 - Tools and commands used
 - References and additional resources
 
-## 🔐 Disclaimer
+---
 
-All content in this repository is for **educational purposes only**. The techniques and exploits documented here should only be used on authorized systems and platforms like Hack The Box. Unauthorized access to computer systems is illegal.
+## [!] Disclaimer
 
-## 📊 Progress Tracking
+> [!WARNING]
+> All content in this repository is for **educational purposes only**. The techniques and exploits documented here should only be used on authorized systems and platforms like Hack The Box. Unauthorized access to computer systems is illegal.
+
+---
+
+## [+] Progress Tracking
 
 - **Machines Completed**: (to be updated)
 - **Academy Courses**: (to be updated)
 - **Skills Developed**: (to be updated)
 
-## 📚 References
+---
+
+## [+] References
 
 - [Hack The Box](https://www.hackthebox.com/)
 - [HTB Academy](https://academy.hackthebox.com/)
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 - [MITRE ATT&CK Framework](https://attack.mitre.org/)
 
-## 🤝 Contributing
+---
+
+## [+] Contributing
 
 This is a personal learning repository. Feel free to use it as inspiration for your own HTB journey!
 
-## 📄 License
+---
+
+## [+] License
 
 Educational content - Use for learning purposes only.
 

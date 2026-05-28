@@ -1,8 +1,10 @@
-# 🛠️ Herramientas Personalizadas y Scripts
+# Herramientas Personalizadas y Scripts
+
+![Workspace](https://img.shields.io/badge/Workspace-Tools-blue?style=flat-square)
 
 Esta carpeta contiene scripts propios y herramientas desarrolladas a lo largo del aprendizaje en Hack The Box para automatizar tareas de reconocimiento, explotación y análisis.
 
-## 📋 Lista de Herramientas
+## [+] Lista de Herramientas
 
 ### 1. Escáner de Puertos TCP Multihilo (`port_scanner.py`)
 Un escáner de puertos TCP escrito en Python puro (sin dependencias externas) que implementa concurrencia con hilos para verificar qué puertos están abiertos rápidamente en un equipo objetivo.
