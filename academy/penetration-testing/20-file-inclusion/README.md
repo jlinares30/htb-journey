@@ -24,13 +24,15 @@ Vulnerability/Concept Map:
 ├── [Read vs Execute](file:///d:/u/cibersecurity/htb-journey/academy/penetration-testing/20-file-inclusion/read-vs-execute/README.md)
 ├── [Local File Inclusion (LFI)](file:///d:/u/cibersecurity/htb-journey/academy/penetration-testing/20-file-inclusion/local-file-inclusion/README.md)
 ├── [Basic Bypasses](file:///d:/u/cibersecurity/htb-journey/academy/penetration-testing/20-file-inclusion/basic-bypasses/README.md)
-└── [PHP Filters & Wrappers](file:///d:/u/cibersecurity/htb-journey/academy/penetration-testing/20-file-inclusion/php-filters/README.md)
+├── [PHP Filters](file:///d:/u/cibersecurity/htb-journey/academy/penetration-testing/20-file-inclusion/04-php-filters/writeup.md)
+└── [PHP Wrappers](file:///d:/u/cibersecurity/htb-journey/academy/penetration-testing/20-file-inclusion/05-php-wrappers/writeup.md)
 ```
 
 ### Lab Writeups
 * [LFI Machine Writeup](file:///d:/u/cibersecurity/htb-journey/academy/penetration-testing/20-file-inclusion/local-file-inclusion/writeup.md)
+* [PHP Wrappers Writeup](file:///d:/u/cibersecurity/htb-journey/academy/penetration-testing/20-file-inclusion/05-php-wrappers/writeup.md)
 * [Bypasses Machine Writeup](file:///d:/u/cibersecurity/htb-journey/academy/penetration-testing/20-file-inclusion/basic-bypasses/writeup.md)
-* [PHP Filters Machine Writeup](file:///d:/u/cibersecurity/htb-journey/academy/penetration-testing/20-file-inclusion/php-filters/writeup.md)
+* [PHP Filters Machine Writeup](file:///d:/u/cibersecurity/htb-journey/academy/penetration-testing/20-file-inclusion/04-php-filters/writeup.md)
 
 
 ---
