@@ -79,6 +79,29 @@ seq 1 1000 > ids.txt
 ffuf -w ids.txt -u http://10.129.x.x:PORT/admin/admin.php -X POST -d "id=FUZZ" -H "Content-Type: application/x-www-form-urlencoded" -fs 290
 ```
 
+### 4. Advanced Request & Target Customizations (HTB Academy)
+```bash
+# Using Multiple Wordlists (e.g. fuzzing parameter name AND value simultaneously)
+# Assign aliases to wordlists using ':' and use them in the URL/data string
+ffuf -w /path/to/params.txt:W1 -w /path/to/values.txt:W2 -u http://10.129.x.x:PORT/admin/admin.php?W1=W2 -fs 290
+
+# Sending Custom Headers & Cookies (Authentication & Target Bypasses)
+ffuf -w wordlist.txt -u http://10.129.x.x:PORT/FUZZ -H "Cookie: session=xyz" -H "User-Agent: Mozilla/5.0"
+
+# POST JSON Fuzzing
+# Note: JSON payload formatting requires quoting the body correctly
+ffuf -w wordlist.txt -u http://10.129.x.x:PORT/api/lookup -X POST -d '{"username": "FUZZ"}' -H "Content-Type: application/json" -fs 290
+```
+
+### 5. Output Management & Logging
+```bash
+# Saving output to a file (JSON format)
+ffuf -w wordlist.txt -u http://10.129.x.x:PORT/FUZZ -o results.json -of json
+
+# Saving output in multiple formats (e.g. md, html, csv)
+ffuf -w wordlist.txt -u http://10.129.x.x:PORT/FUZZ -o results -of md
+```
+
 ---
 
 ## [¤] Operation Log (Proof of Concept)
