@@ -84,7 +84,7 @@ sequenceDiagram
     participant App as 💻 Application (L7-L5)
     participant Trans as ⚡ Transport (L4)
     participant Net as 🗺️ Network (L3)
-    participant Link as 🔗 Data Link (L2)
+    participant DLink as 🔗 Data Link (L2)
     participant Phys as 🔌 Physical (L1)
 
     Note over App: 📄 [Data Payload] Created
@@ -92,9 +92,9 @@ sequenceDiagram
     Note over Trans: ➕ Adds TCP/UDP Header<br/>📦 PDU: Segment
     Trans->>Net: Encapsulate Segment
     Note over Net: ➕ Adds IP Header<br/>📦 PDU: Packet
-    Net->>Link: Encapsulate Packet
-    Note over Link: ➕ Adds Eth Header & FCS Trailer<br/>📦 PDU: Frame
-    Link->>Phys: Transmit Frame
+    Net->>DLink: Encapsulate Packet
+    Note over DLink: ➕ Adds Eth Header & FCS Trailer<br/>📦 PDU: Frame
+    DLink->>Phys: Transmit Frame
     Note over Phys: 📡 Binary Signals: 01001000 01100101...
 ```
 
