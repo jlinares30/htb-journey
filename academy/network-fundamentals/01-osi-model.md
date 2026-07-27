@@ -47,13 +47,13 @@ graph TD
         L2 -->|PDU: Frame| L1["🔌 Layer 1: Physical<br/><i>Fiber, Cat6 Cables, Radio Waves</i>"]
     end
 
-    classDef appStyle fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#e2e8f0;
-    classDef transStyle fill:#1e1b4b,stroke:#a855f7,stroke-width:2px,color:#f3e8ff;
-    classDef linkStyle fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#ecfdf5;
+    classDef cAppStyle fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#e2e8f0;
+    classDef cTransStyle fill:#1e1b4b,stroke:#a855f7,stroke-width:2px,color:#f3e8ff;
+    classDef cLinkStyle fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#ecfdf5;
 
-    class L7,L6,L5 appStyle;
-    class L4,L3 transStyle;
-    class L2,L1 linkStyle;
+    class L7,L6,L5 cAppStyle;
+    class L4,L3 cTransStyle;
+    class L2,L1 cLinkStyle;
 ```
 
 ---
