@@ -45,6 +45,54 @@ Puertos:         22, 80, 8080
 =======================================================
 ```
 
+### 2. Detección de Sistema Operativo por TTL (`whichSystem.py`)
+Determina si una máquina objetivo es Linux o Windows analizando el valor de TTL (Time to Live) en las respuestas ICMP.
+
+* **Archivo**: [`whichSystem.py`](file:///d:/Jorge/ciberseguridad/htb-journey/tools/whichSystem.py)
+* **Uso**:
+  ```bash
+  python3 whichSystem.py <IP_Objetivo>
+  ```
+
+---
+
+### 3. Extractor de Puertos Nmap (`extractPorts.py`)
+Procesa el archivo grepable (`-oG`) generado por Nmap tras un escaneo rápido, extrae la IP, filtra los puertos abiertos en formato separado por comas, los copia automáticamente al portapapeles (`xclip`/`xsel`/`wl-copy`/`clip`) y genera el comando para el escaneo detallado (`-sCV`).
+
+* **Archivo**: [`extractPorts.py`](file:///d:/Jorge/ciberseguridad/htb-journey/tools/extractPorts.py)
+* **Uso**:
+  ```bash
+  # 1. Escaneo rápido de todos los puertos guardando en formato grepable (-oG)
+  nmap -p- --open -sS --min-rate 5000 -Pn -n 10.10.10.188 -oG allPorts
+
+  # 2. Extraer puertos y copiar al portapapeles
+  python3 extractPorts.py allPorts
+  ```
+
+#### Ejemplo de Salida:
+```text
+=======================================================
+ [*] Extrayendo Información de Nmap (-oG)
+=======================================================
+
+	[+] Dirección IP: 10.10.10.188
+	[+] Puertos Abiertos: 22,80,443,8080
+
+	[*] Puertos copiados automáticamente al portapapeles!
+
+-------------------------------------------------------
+ [*] Comando sugerido para escaneo profundo:
+     nmap -sCV -p22,80,443,8080 10.10.10.188 -oN targeted
+=======================================================
+```
+
+---
+
+### 4. Generador de Wordlists Personalizadas (`wordlist_generator.py`)
+Genera diccionarios y combinaciones basadas en información de reconocimiento (nombres, años, palabras clave, variaciones de mayúsculas/minúsculas y sustituciones l33t).
+
+* **Archivo**: [`wordlist_generator.py`](file:///d:/Jorge/ciberseguridad/htb-journey/tools/wordlist_generator.py)
+
 ---
 
 > [!CAUTION]
