@@ -13,6 +13,7 @@ Welcome to my Hack The Box learning repository! This repository documents my cyb
 htb-journey/
 ├── academy/                    # Academy modules and courses
 │   ├── linux/                 # Linux Fundamentals course
+│   ├── network-fundamentals/  # Network theory, OSI, TCP/IP & Protocols
 │   └── penetration-testing/   # Penetration Tester Path modules
 ├── machines/                  # Machine walkthroughs and exploits
 │   ├── easy/                  # Easy difficulty machines
