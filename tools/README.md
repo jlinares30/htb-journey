@@ -91,9 +91,35 @@ Procesa el archivo grepable (`-oG`) generado por Nmap tras un escaneo rápido, e
 ### 4. Generador de Wordlists Personalizadas (`wordlist_generator.py`)
 Genera diccionarios y combinaciones basadas en información de reconocimiento (nombres, años, palabras clave, variaciones de mayúsculas/minúsculas y sustituciones l33t).
 
-* **Archivo**: [`wordlist_generator.py`](file:///d:/Jorge/ciberseguridad/htb-journey/tools/wordlist_generator.py)
+* **Archivo**: [`wordlist_generator.py`](file:///d:/u/cibersecurity/htb-journey/tools/wordlist_generator.py)
+
+---
+
+### 5. Generador de Reverse Shells (`revshell_gen.py`)
+Genera payloads de Reverse Shell listos para usar en múltiples lenguajes (Bash, Python, Netcat, PHP, PowerShell, Socat, AWK, Perl, NodeJS) con soporte para codificación en Base64, URL-encoding y formato de comando codificado para PowerShell.
+
+* **Archivo**: [`revshell_gen.py`](file:///d:/u/cibersecurity/htb-journey/tools/revshell_gen.py)
+* **Requisitos**: Python 3.x
+* **Uso**:
+  ```bash
+  # Ver todos los payloads para una IP y Puerto
+  python3 revshell_gen.py <IP_LHOST> <PUERTO_LPORT>
+
+  # Generar payload específico (ej: python3)
+  python3 revshell_gen.py 10.10.14.5 4444 -t python3
+
+  # Generar payload URL-encoded (ideal para inyecciones web / RCE)
+  python3 revshell_gen.py 10.10.14.5 4444 -t bash -e url
+
+  # Generar payload codificado para PowerShell
+  python3 revshell_gen.py 10.10.14.5 4444 -t powershell -e powershell-b64
+
+  # Listar todos los tipos y codificaciones soportadas
+  python3 revshell_gen.py -l
+  ```
 
 ---
 
 > [!CAUTION]
 > **Uso Ético**: Utiliza estas herramientas únicamente en entornos controlados, máquinas de Hack The Box u otros objetivos autorizados. El escaneo de puertos no autorizado puede ser considerado tráfico malicioso por sistemas de detección de intrusos (IDS/IPS).
+
